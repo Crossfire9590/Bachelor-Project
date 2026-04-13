@@ -1,8 +1,8 @@
 /**
  * Flex sensor test - Averaged over 100ms
  */
-
-
+#include "WiFi.h"
+#include "esp_now.h"
 
 #define LITTLE 5 
 #define RING 6
