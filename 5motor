@@ -1,0 +1,30 @@
+#include <ESP32Servo.h>
+
+const int NUM_SERVOS = 5;
+Servo myServos[NUM_SERVOS];
+
+// Assigning 5 recommended ESP32 pins
+int servoPins[NUM_SERVOS] = {3, 7, 6, 5, 4};
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Attach all 5 servos to their respective pins using a loop
+  for (int i = 0; i < NUM_SERVOS; i++) {
+    myServos[i].attach(servoPins[i]);
+  }
+}
+
+void loop() {
+  // Move all 5 servos to 40 degrees
+  for (int i = 0; i < NUM_SERVOS; i++) {
+    myServos[i].write(40);
+  }
+  delay(1000);
+  
+  // Move all 5 servos to 120 degrees
+  for (int i = 0; i < NUM_SERVOS; i++) {
+    myServos[i].write(120);
+  }
+  delay(1000);
+}
