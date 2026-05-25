@@ -6,7 +6,7 @@
 const int numServos = 5;
 Servo servos[numServos];
 
-// CHANGED: Avoided GPIO 6 and 7 (Flash pins). Using safe ESP32 pins instead.
+
 int servoPins[numServos] = {4, 5, 6, 7, 3}; 
 int currentPos[numServos] = {90, 90, 90, 90, 90};
 int targetPos[numServos] = {90, 90, 90, 90, 90}; 
@@ -28,7 +28,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   
   // Update our target positions based on wireless data
   for(int i = 0; i < numServos; i++) {
-    // CHANGED: Map 0-1000 (glove) to 0-180 (servo degrees) before constraining
+    
     int processedReading = constrain(incomingReadings.fingers[i], 100, 900);
     int targetAngle = map(processedReading, 100, 900, 0, 180);
     
