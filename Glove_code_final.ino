@@ -14,7 +14,7 @@ typedef struct struct_message {
 } struct_message;
 
 struct_message myData;
-uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+uint8_t broadcastAddress[] = {0xAC, 0xA7, 0x04, 0x26, 0x04, 0x48};
 
 int calibMin[5] = {4095, 4095, 4095, 4095, 4095};
 int calibMax[5] = {0, 0, 0, 0, 0};
